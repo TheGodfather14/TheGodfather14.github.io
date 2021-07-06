@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="6-29-worklog, TheGodfather14 Blog">
+    <meta name="keywords" content="7-5-worklog, TheGodfather14 Blog">
     <meta name="description" content="The blog of He Yutong is for private learning web-development.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>6-29-worklog | TheGodfather14 Blog</title>
+    <title>7-5-worklog | TheGodfather14 Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">6-29-worklog</h1>
+                    <h1 class="description center-align post-title">7-5-worklog</h1>
                 </div>
             </div>
         </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-29
+                    2021-07-06
                 </div>
                 
 
@@ -481,14 +481,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h3><ol>
-<li>把雷达图的低纬度扩展为高维度，总结关于status的数值问题</li>
-<li>修改雷达图样式</li>
+<li>修改一些小的bug，修改登录页面的默认账号以及密码</li>
+<li>重新确定标签的status的几种值的代表意义，以及对应的显示逻辑</li>
 </ol>
 <h3 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h3><ol>
-<li>挂载数据到历史记录</li>
-<li>修改低纬度的不足的情况，设计新的数组进行传递数据，补充没有的为空，？，等</li>
-<li>调整样式</li>
-<li>小程序上线需要让请求地址和预设的一致。</li>
+<li>设置遮罩层</li>
+<li>修改雷达底图的整体大小一致，然后保证位置的剧中行为</li>
+<li>z-index的设置是有一个坑的，关于层级上下文的概念<ol>
+<li>背景和边框 ：形成层叠上下文的元素的背景和边框，它是整个上下文中层叠等级最低的</li>
+<li>Z-Index 为负数 ：设置了 z-index 为负数的子元素以及由它所产生的层叠上下文</li>
+<li>块级盒模型：位于正常文档流中的、块级的、非定位的子元素</li>
+<li>浮动盒模型 ：浮动的、非定位的子元素</li>
+<li>内联盒模型 ：位于正常文档流中的、内联的、非定位的子元素</li>
+<li>Z-index 为 0：设置了 z-index 为 0 的、定位的子元素以及由它所产生的层叠上下文</li>
+<li>Z-Index 为正数 ：设置了 z-index 为正数的、定位的子元素以及由它所产生的层叠上下文，它是整个上下文中层叠等级最高的</li>
+</ol>
+</li>
+<li>准备研究radar的数字显示问题</li>
 </ol>
 
                 
@@ -516,7 +525,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://TheGodfather14.github.io/2021/06/29/6-29-worklog/">https://TheGodfather14.github.io/2021/06/29/6-29-worklog/</a>
+                    <a href="https://TheGodfather14.github.io/2021/07/06/7-5-worklog/">https://TheGodfather14.github.io/2021/07/06/7-5-worklog/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -725,17 +734,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/06/6-30-7-2-worklog/">
+                <a href="/2021/07/06/7-5-worklog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="6-30--7-2-worklog">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="7-5-worklog">
                         
-                        <span class="card-title">6-30--7-2-worklog</span>
+                        <span class="card-title">7-5-worklog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -745,9 +755,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -760,6 +770,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -778,13 +789,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/29/6-28-worklog/">
+                <a href="/2021/07/06/6-30-7-2-worklog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="6-28-worklog">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="6-30--7-2-worklog">
                         
-                        <span class="card-title">6-28-worklog</span>
+                        <span class="card-title">6-30--7-2-worklog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -795,7 +806,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-06
                             </span>
                         <span class="publish-author">
                             
