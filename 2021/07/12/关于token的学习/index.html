@@ -480,7 +480,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="关于cookie，session以及token"><a href="#关于cookie，session以及token" class="headerlink" title="关于cookie，session以及token"></a>关于cookie，session以及token</h3><h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie : 小型文本文件<br>出现的契机 : 需要有一个机制记录每个连接的关系<br>举例说明 : 以加入购物车为例，每次浏览器请求后 server 都会将本次商品 id 存储在 Cookie 中返回给客户端，客户端会将 Cookie 保存在本地，下一次再将上次保存在本地的 Cookie 传给 server 就行了，这样每个 Cookie 都保存着用户的商品 id，购买记录也就不会丢失了<br>出现问题 : 每次请求的 cookie 也越来越大；购物车信息其实已经记录在 server 了，浏览器这样的操作岂是多此一举</p>
+                <h3 id="关于cookie，session以及token"><a href="#关于cookie，session以及token" class="headerlink" title="关于cookie，session以及token"></a>关于cookie，session以及token</h3><p>本文整理自技术胖学程序的公众号文章</p>
+<h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie : 小型文本文件<br>出现的契机 : 需要有一个机制记录每个连接的关系<br>举例说明 : 以加入购物车为例，每次浏览器请求后 server 都会将本次商品 id 存储在 Cookie 中返回给客户端，客户端会将 Cookie 保存在本地，下一次再将上次保存在本地的 Cookie 传给 server 就行了，这样每个 Cookie 都保存着用户的商品 id，购买记录也就不会丢失了<br>出现问题 : 每次请求的 cookie 也越来越大；购物车信息其实已经记录在 server 了，浏览器这样的操作岂是多此一举</p>
 <h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><p>session : 会话机制<br>出现的契机 : 在cookie中加入用户的身份信息就好了，主要内容都存在server里面<br>举例说明 : </p>
 <ol>
 <li>首先用户登录，server 会为用户生成一个 session，为其分配唯一的 sessionId，这个 sessionId 是与某个用户绑定的，也就是说根据此 sessionid（假设为 abc） 可以查询到它到底是哪个用户，然后将此 sessionid 通过 cookie 传给浏览器</li>
