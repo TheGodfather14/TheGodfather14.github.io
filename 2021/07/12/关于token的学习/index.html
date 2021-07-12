@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="7-9-worklog, TheGodfather14 Blog">
+    <meta name="keywords" content="关于token的学习, TheGodfather14 Blog">
     <meta name="description" content="The blog of He Yutong is for private learning web-development.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>7-9-worklog | TheGodfather14 Blog</title>
+    <title>关于token的学习 | TheGodfather14 Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">7-9-worklog</h1>
+                    <h1 class="description center-align post-title">关于token的学习</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/worklog/">
-                                <span class="chip bg-color">worklog</span>
+                            <a href="/tags/learn/">
+                                <span class="chip bg-color">learn</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="post-category">
-                                工作日志
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-category">
+                                学习记录
                             </a>
                         
                     </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-09
+                    2021-07-12
                 </div>
                 
 
@@ -480,16 +480,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h3><ol>
-<li>完成一篇学习记录</li>
-<li>修改关于标签的数据接收</li>
+                <h3 id="关于cookie，session以及token"><a href="#关于cookie，session以及token" class="headerlink" title="关于cookie，session以及token"></a>关于cookie，session以及token</h3><h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie : 小型文本文件<br>出现的契机 : 需要有一个机制记录每个连接的关系<br>举例说明 : 以加入购物车为例，每次浏览器请求后 server 都会将本次商品 id 存储在 Cookie 中返回给客户端，客户端会将 Cookie 保存在本地，下一次再将上次保存在本地的 Cookie 传给 server 就行了，这样每个 Cookie 都保存着用户的商品 id，购买记录也就不会丢失了<br>出现问题 : 每次请求的 cookie 也越来越大；购物车信息其实已经记录在 server 了，浏览器这样的操作岂是多此一举</p>
+<h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><p>session : 会话机制<br>出现的契机 : 在cookie中加入用户的身份信息就好了，主要内容都存在server里面<br>举例说明 : </p>
+<ol>
+<li>首先用户登录，server 会为用户生成一个 session，为其分配唯一的 sessionId，这个 sessionId 是与某个用户绑定的，也就是说根据此 sessionid（假设为 abc） 可以查询到它到底是哪个用户，然后将此 sessionid 通过 cookie 传给浏览器</li>
+<li>之后浏览器的每次添加购物车请求中只要在 cookie 里带上 sessionId=abc 这一个键值对即可，server 根据 sessionId 找到它对应的用户后，把传过来的商品 id 保存到 server 中对应用户的购物车即可<br>和cookie的区别 : cookie存储在client中，session保存在server<br>出现问题 : server不只是一个机器 如果下一个请求打到了另一个server是找不到session的<br>解决方法 : 1. 每个机器都复制一份–&gt;造成冗余; 2. 固定只打到某个server –&gt; 如果挂了怎么办？ 3. 保存在中间件中–&gt;多一次内部链接，消耗性能</li>
 </ol>
-<h3 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h3><ol>
-<li>重新写了关于标签展示的代码，删除了多余的文件，整体更清楚。目前这部分代码的问题就是太多没有必要的组件。完全可以更简单。</li>
-<li>修改了一些样式，更美观</li>
-<li>写完这周的工作记录，准备晚上的会议</li>
-<li>修改一些小bug</li>
+<h4 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h4><p>token : 请求方输入自己的用户名，密码，然后 server 据此生成 token，客户端拿到 token 后会保存到本地，之后向 server 请求时在请求头带上此 token 即可<br>两个问题 : 1. server 会有一套校验机制，校验这个 token 是否合法;2. token 本身携带 uid 信息<br>组成 : 三部分==&gt; </p>
+<ol>
+<li>header：指定了签名算法</li>
+<li>payload：可以指定用户 id，过期时间等非敏感数据</li>
+<li>ignature: 签名，server 根据 header 知道它该用哪种签名算法，再用密钥根据此签名算法对 head + payload 生成签名，这样一个 token 就生成了。</li>
 </ol>
+<h4 id="总结-Cookie与token"><a href="#总结-Cookie与token" class="headerlink" title="总结 Cookie与token"></a>总结 Cookie与token</h4><ol>
+<li>Cookie 跨站是不能共享的(指在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。)<br>只要在 header 中的 authorize 字段（或其他自定义）加上 token 即可完成所有跨域站点的认证。</li>
+<li>换句话说token 天生支持移动平台，可扩展性好</li>
+<li>token的缺点：1）太长了；2）存储在local storage中，不太安全</li>
+</ol>
+<h4 id="迷思：Cookie-相比-token-更不安全，比如-CSRF-攻击"><a href="#迷思：Cookie-相比-token-更不安全，比如-CSRF-攻击" class="headerlink" title="迷思：Cookie 相比 token 更不安全，比如 CSRF 攻击"></a>迷思：Cookie 相比 token 更不安全，比如 CSRF 攻击</h4><p>什么是CSRF : 攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过（cookie 里带来 sessionId 等身份认证的信息），所以被访问的网站会认为是真正的用户操作而去运行。由于相同域名的请求会自动带上 cookie，而 cookie 里带有正常登录用户的 sessionid，类似上面这样的转账操作在 server 就会成功，会造成极大的安全风险。<br>CSRF 攻击的根本原因在于对于同样域名的每个请求来说，它的 cookie 都会被自动带上，这个是浏览器的机制决定的，所以很多人据此认定 cookie 不安全。<br>使用 token 确实避免了CSRF 的问题，但正如上文所述，由于 token 保存在 local storage，它会被 JS 读取，从存储角度来看也不安全（实际上防护 CSRF 攻击的正确方式是用 CSRF token）<br>所以不管是 cookie 还是 token，从存储角度来看其实都不安全，都有暴露的风险，我们所说的安全更多的是强调传输中的安全，可以用 HTTPS 协议来传输， 这样的话请求头都能被加密，也就保证了传输中的安全。</p>
+<h4 id="总结-session与Token"><a href="#总结-session与Token" class="headerlink" title="总结 session与Token"></a>总结 session与Token</h4><p>session 和 token 本质上是没有区别的，都是对用户身份的认证机制，只是他们实现的校验机制不一样而已（一个保存在 server，通过在 redis 等中间件获取来校验，一个保存在 client，通过签名校验的方式来校验），多数场景上使用 session 会更合理，但如果在单点登录，一次性命令认证上使用 token 会更合适，最好在不同的业务场景中合理选型，才能达到事半功倍的效果。</p>
 
                 
             </div>
@@ -516,7 +525,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://TheGodfather14.github.io/2021/07/09/7-9-worklog/">https://TheGodfather14.github.io/2021/07/09/7-9-worklog/</a>
+                    <a href="https://TheGodfather14.github.io/2021/07/12/%E5%85%B3%E4%BA%8Etoken%E7%9A%84%E5%AD%A6%E4%B9%A0/">https://TheGodfather14.github.io/2021/07/12/%E5%85%B3%E4%BA%8Etoken%E7%9A%84%E5%AD%A6%E4%B9%A0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +563,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/worklog/">
-                                    <span class="chip bg-color">worklog</span>
+                                <a href="/tags/learn/">
+                                    <span class="chip bg-color">learn</span>
                                 </a>
                             
                         </div>
@@ -725,9 +734,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/07/12/%E5%85%B3%E4%BA%8Etoken%E7%9A%84%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
@@ -745,9 +755,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -760,6 +770,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -778,13 +789,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/09/25%E9%81%93%E6%80%AA%E5%BC%82%E7%9A%84%E9%A2%98%E7%9B%AE/">
+                <a href="/2021/07/09/7-9-worklog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="25道怪异的题目">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="7-9-worklog">
                         
-                        <span class="card-title">25道怪异的题目</span>
+                        <span class="card-title">7-9-worklog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,8 +812,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    学习记录
+                            <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="post-category">
+                                    工作日志
                                 </a>
                             
                             
@@ -812,8 +823,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/learn/">
-                        <span class="chip bg-color">learn</span>
+                    <a href="/tags/worklog/">
+                        <span class="chip bg-color">worklog</span>
                     </a>
                     
                 </div>
